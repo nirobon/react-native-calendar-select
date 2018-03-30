@@ -121,7 +121,7 @@ export default class Calendar extends Component {
       startDate: isStartValid ? start : null,
       startDateText: isStartValid ? this._i18n(start, 'date') : '',
       startWeekdayText: isStartValid ? this._i18n(start.isoWeekday(), 'weekday') : '',
-      endDate: isEndValid ? end: null,
+      endDate: isEndValid ? end: end,
       endDateText: isEndValid ? this._i18n(end, 'date') : '',
       endWeekdayText: isEndValid ? this._i18n(end.isoWeekday(), 'weekday') : ''
     });
@@ -155,14 +155,14 @@ export default class Calendar extends Component {
       startDate,
       endDate
     } = this.state;
-    if ((!startDate && !endDate) || day < startDate || (startDate && endDate)) {
+    if ((startDate && endDate) || day <= startDate || (startDate && endDate)) {
       this.setState({
         startDate: day,
         endDate: null,
         startDateText: this._i18n(day, 'date'),
         startWeekdayText: this._i18n(day.isoWeekday(), 'weekday'),
-        endDateText: '',
-        endWeekdayText: '',
+        endDateText: this._i18n(day, 'date'),
+        endWeekdayText: this._i18n(day.isoWeekday(), 'weekday'),
       });
     } else if (startDate && !endDate && day > startDate) {
       this.setState({
