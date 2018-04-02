@@ -292,7 +292,7 @@ export default class Calendar extends Component {
             />
           </View>
           <View style={styles.btn}>
-            {isValid ?
+            {/* {isValid ? */}
               <TouchableHighlight
                 underlayColor="rgba(255, 255, 255, 0.45)"
                 style={styles.confirmContainer}
@@ -304,8 +304,8 @@ export default class Calendar extends Component {
                     {this._i18n('save', 'text')}
                   </Text>
                 </View>
-              </TouchableHighlight> :
-              <View style={[styles.confirmContainer, styles.confirmContainerDisabled]}>
+              </TouchableHighlight> 
+              {/* <View style={[styles.confirmContainer, styles.confirmContainerDisabled]}>
                 <View style={styles.confirmBtn}>
                   <Text
                     ellipsisMode="tail" numberOfLines={1}
@@ -314,7 +314,7 @@ export default class Calendar extends Component {
                   </Text>
                 </View>
               </View>
-            }
+            } */}
           </View>
         </View>
       </Modal>
