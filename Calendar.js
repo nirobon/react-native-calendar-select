@@ -239,7 +239,7 @@ export default class Calendar extends Component {
         onRequestClose={this.close}>
         <View style={[styles.container, mainBack]}>
           <View style={styles.ctrl}>
-            <TouchableHighlight
+            {/* <TouchableHighlight
               underlayColor="transparent"
               onPress={this.cancel}
               >
@@ -247,7 +247,7 @@ export default class Calendar extends Component {
                 style={styles.closeIcon}
                 source={{uri: ICON.close}}
                 resizeMode="cover"/>
-            </TouchableHighlight>
+            </TouchableHighlight> */}
             {isClearVisible && <TouchableHighlight
               underlayColor="transparent"
               activeOpacity={0.8}
