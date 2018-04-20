@@ -239,21 +239,6 @@ export default class Calendar extends Component {
         onRequestClose={this.close}>
         <View style={[styles.container, mainBack]}>
           <View style={styles.ctrl}>
-            {/* <TouchableHighlight
-              underlayColor="transparent"
-              onPress={this.cancel}
-              >
-              <Image
-                style={styles.closeIcon}
-                source={{uri: ICON.close}}
-                resizeMode="cover"/>
-            </TouchableHighlight> */}
-            {isClearVisible && <TouchableHighlight
-              underlayColor="transparent"
-              activeOpacity={0.8}
-              onPress={this.clear}>
-              <Text style={[styles.clearText, subFontColor]}>{this._i18n('clear', 'text')}</Text>
-            </TouchableHighlight>}
           </View>
           <View style={styles.result}>
             <View style={styles.resultPart}>
@@ -292,7 +277,6 @@ export default class Calendar extends Component {
             />
           </View>
           <View style={styles.btn}>
-            {/* {isValid ? */}
               <TouchableHighlight
                 underlayColor="rgba(255, 255, 255, 0.45)"
                 style={styles.confirmContainer}
@@ -304,17 +288,7 @@ export default class Calendar extends Component {
                     {this._i18n('save', 'text')}
                   </Text>
                 </View>
-              </TouchableHighlight> 
-              {/* <View style={[styles.confirmContainer, styles.confirmContainerDisabled]}>
-                <View style={styles.confirmBtn}>
-                  <Text
-                    ellipsisMode="tail" numberOfLines={1}
-                    style={[styles.confirmText, styles.confirmTextDisabled]}>
-                    {this._i18n('save', 'text')}
-                  </Text>
-                </View>
-              </View>
-            } */}
+              </TouchableHighlight>
           </View>
         </View>
       </Modal>
